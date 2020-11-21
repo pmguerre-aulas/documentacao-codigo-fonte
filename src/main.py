@@ -9,7 +9,6 @@ def menu():
     """ função para gerir o menu principal.
     Apresenta um menu e de acordo com as opcao escolhida pelo utilizador entra num submenu de conversao ou sai da aplicação
     """
-
     while True:
         print("""
         ----------------------------------  Menu -----------------------------------  
