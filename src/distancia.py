@@ -23,10 +23,19 @@ def converte_distancia(comprimento, de_unidade, para_unidade):
     Recebe o valor da distancia e correspondente unidade e devolve a distancia na unidade pretendida.
 
     :param comprimento: distancia originial
-    :param de_unidade: unidade da distancia original
-    :param para_unidade: unidade da distancia pretendida
+    :type comprimento: int ou float
+    :param de_unidade: unidade da distancia original (valores admissíveis: fator.keys())
+    :type de_unidade: string
+    :param para_unidade: unidade da distancia pretendida (valores admissíveis: fator.keys())
+    :type para_unidade: string
     :return: comprimento na unidade pretendida
+    :rtype: float
+    :raises TypeError: se os tipos não forem os corretos
     """
+    assert isinstance(comprimento, (int, float)), "comprimento deve ser int ou float"
+    assert isinstance(de_unidade, str), f"unidade deve ser elemento de {list(fator.keys())}"
+    assert isinstance(para_unidade, str), f"unidade deve ser elemento de {list(fator.keys())}"
+
     return comprimento * fator[de_unidade] / fator[para_unidade]
 
 
@@ -53,14 +62,16 @@ def menu_distancia():
             if de_str == "s":
                 break
             comprimento, de_unidade = de_str.split()
-            if de_unidade not in fator.keys():
-                print("Unidade inválida")
             comprimento = float(comprimento)
+            assert de_unidade in fator.keys(), "Unidade inválida"
 
             para_unidade = input("para?").lower()
-            if para_unidade not in fator.keys():
-                print("Unidade inválida")
+            assert para_unidade in fator.keys(), "Unidade inválida"
 
             print(f"{de_str} = {converte_distancia(comprimento, de_unidade, para_unidade)} {para_unidade}")
         except Exception as e:
             print(f"Erro: {e}")
+
+if __name__ == "__main__":
+    converte_distancia("1", "mm", "km")
+    print("over & out!")
