@@ -1,5 +1,9 @@
 """
 módulo que implementa os métodos necessários para a conversão de unidades de distância.
+
+:Date: nov, 2020
+:Version: 1.0
+:Authors: pcardoso
 """
 
 fator = {
@@ -17,6 +21,7 @@ fator = {
 fator de conversão de cada unidade para metros
 """
 
+
 def converte_distancia(comprimento, de_unidade, para_unidade):
     """
     Conversor de distancia.
@@ -27,6 +32,7 @@ def converte_distancia(comprimento, de_unidade, para_unidade):
     :param para_unidade: unidade da distancia pretendida
     :return: comprimento na unidade pretendida
     """
+
     return comprimento * fator[de_unidade] / fator[para_unidade]
 
 
