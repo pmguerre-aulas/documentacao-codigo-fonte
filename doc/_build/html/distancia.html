@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>distancia module &#8212; Conversor 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
+    <link rel="prev" title="area module" href="area.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-distancia">
+<span id="distancia-module"></span><h1>distancia module<a class="headerlink" href="#module-distancia" title="Permalink to this headline">¶</a></h1>
+<p>módulo que implementa os métodos necessários para a conversão de unidades de distância.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>nov, 2020</p>
+</dd>
+<dt class="field-even">Version</dt>
+<dd class="field-even"><p>1.0</p>
+</dd>
+<dt class="field-odd">Authors</dt>
+<dd class="field-odd"><p>pcardoso</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="distancia.converte_distancia">
+<code class="sig-prename descclassname">distancia.</code><code class="sig-name descname">converte_distancia</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comprimento</span></em>, <em class="sig-param"><span class="n">de_unidade</span></em>, <em class="sig-param"><span class="n">para_unidade</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/distancia.html#converte_distancia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#distancia.converte_distancia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conversor de distancia.
+Recebe o valor da distancia e correspondente unidade e devolve a distancia na unidade pretendida.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>comprimento</strong> – distancia originial</p></li>
+<li><p><strong>de_unidade</strong> – unidade da distancia original</p></li>
+<li><p><strong>para_unidade</strong> – unidade da distancia pretendida</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>comprimento na unidade pretendida</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt id="distancia.fator">
+<code class="sig-prename descclassname">distancia.</code><code class="sig-name descname">fator</code><em class="property"> = {'cm': 0.01, 'dam': 10, 'dm': 0.1, 'hm': 100, 'km': 1000, 'm': 1, 'mi': 1609.344, 'mm': 0.001, 'pe': 0.3048}</em><a class="headerlink" href="#distancia.fator" title="Permalink to this definition">¶</a></dt>
+<dd><p>fator de conversão de cada unidade para metros</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="distancia.menu_distancia">
+<code class="sig-prename descclassname">distancia.</code><code class="sig-name descname">menu_distancia</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/distancia.html#menu_distancia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#distancia.menu_distancia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Função para gerir o menu dos conversores de distância.
+Apresenta um menu e de acordo com as opcao escolhida pelo utilizador chamas as funções de conversão</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Conversor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="area.html">area module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">distancia module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="massa.html">massa module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="velocidade.html">velocidade module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volume.html">volume module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="area.html" title="previous chapter">area module</a></li>
+      <li>Next: <a href="main.html" title="next chapter">main module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, pcardoso.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/distancia.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

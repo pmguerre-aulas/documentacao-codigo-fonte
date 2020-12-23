@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>distancia &#8212; Conversor 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for distancia</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">módulo que implementa os métodos necessários para a conversão de unidades de distância.</span>
+
+<span class="sd">:Date: nov, 2020</span>
+<span class="sd">:Version: 1.0</span>
+<span class="sd">:Authors: pcardoso</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">fator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;mm&quot;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+    <span class="s2">&quot;cm&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="s2">&quot;dm&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;dam&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;hm&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s2">&quot;km&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">&quot;mi&quot;</span><span class="p">:</span> <span class="mf">1609.344</span><span class="p">,</span>    <span class="c1"># milhas</span>
+    <span class="s2">&quot;pe&quot;</span><span class="p">:</span> <span class="mf">0.3048</span>      <span class="c1"># pés</span>
+    <span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">fator de conversão de cada unidade para metros</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="converte_distancia"><a class="viewcode-back" href="../distancia.html#distancia.converte_distancia">[docs]</a><span class="k">def</span> <span class="nf">converte_distancia</span><span class="p">(</span><span class="n">comprimento</span><span class="p">,</span> <span class="n">de_unidade</span><span class="p">,</span> <span class="n">para_unidade</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Conversor de distancia.</span>
+<span class="sd">    Recebe o valor da distancia e correspondente unidade e devolve a distancia na unidade pretendida.</span>
+
+<span class="sd">    :param comprimento: distancia originial</span>
+<span class="sd">    :param de_unidade: unidade da distancia original</span>
+<span class="sd">    :param para_unidade: unidade da distancia pretendida</span>
+<span class="sd">    :return: comprimento na unidade pretendida</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">comprimento</span> <span class="o">*</span> <span class="n">fator</span><span class="p">[</span><span class="n">de_unidade</span><span class="p">]</span> <span class="o">/</span> <span class="n">fator</span><span class="p">[</span><span class="n">para_unidade</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="menu_distancia"><a class="viewcode-back" href="../distancia.html#distancia.menu_distancia">[docs]</a><span class="k">def</span> <span class="nf">menu_distancia</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Função para gerir o menu dos conversores de distância.</span>
+<span class="sd">    Apresenta um menu e de acordo com as opcao escolhida pelo utilizador chamas as funções de conversão</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">             -----------------------------  converte distâncias ------------------------------</span>
+<span class="s2">             Unidades possíveis: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">fator</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">             exemplo: </span>
+<span class="s2">               de = 10 m    # colocar espaco a seguir ao número</span>
+<span class="s2">               para = km</span>
+
+<span class="s2">               km = 10000 m </span>
+<span class="s2">             (S)air</span>
+<span class="s2">             &quot;&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">de_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;de?&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">de_str</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">comprimento</span><span class="p">,</span> <span class="n">de_unidade</span> <span class="o">=</span> <span class="n">de_str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">de_unidade</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fator</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unidade inválida&quot;</span><span class="p">)</span>
+            <span class="n">comprimento</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">comprimento</span><span class="p">)</span>
+
+            <span class="n">para_unidade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;para?&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">para_unidade</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fator</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unidade inválida&quot;</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">de_str</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">converte_distancia</span><span class="p">(</span><span class="n">comprimento</span><span class="p">,</span> <span class="n">de_unidade</span><span class="p">,</span> <span class="n">para_unidade</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">para_unidade</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Conversor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../area.html">area module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distancia.html">distancia module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../massa.html">massa module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../velocidade.html">velocidade module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../volume.html">volume module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, pcardoso.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
