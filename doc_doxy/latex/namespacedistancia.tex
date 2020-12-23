@@ -1,0 +1,93 @@
+\hypertarget{namespacedistancia}{}\doxysection{distancia Namespace Reference}
+\label{namespacedistancia}\index{distancia@{distancia}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedistancia_a0e198719b6c4af9937b525bb11739f2e}{converte\+\_\+distancia}} (comprimento, de\+\_\+unidade, para\+\_\+unidade)
+\item 
+def \mbox{\hyperlink{namespacedistancia_ab2dba0580208d0001d0950b494d5c634}{menu\+\_\+distancia}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dictionary \mbox{\hyperlink{namespacedistancia_aed0c0b641499e5e22e8116004564e12b}{fator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}módulo que implementa os métodos necessários para a conversão de unidades de distância.
+
+:Date: nov, 2020
+:Version: 1.0
+:Authors: pcardoso
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacedistancia_a0e198719b6c4af9937b525bb11739f2e}\label{namespacedistancia_a0e198719b6c4af9937b525bb11739f2e}} 
+\index{distancia@{distancia}!converte\_distancia@{converte\_distancia}}
+\index{converte\_distancia@{converte\_distancia}!distancia@{distancia}}
+\doxysubsubsection{\texorpdfstring{converte\_distancia()}{converte\_distancia()}}
+{\footnotesize\ttfamily def distancia.\+converte\+\_\+distancia (\begin{DoxyParamCaption}\item[{}]{comprimento,  }\item[{}]{de\+\_\+unidade,  }\item[{}]{para\+\_\+unidade }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Conversor de distancia.
+Recebe o valor da distancia e correspondente unidade e devolve a distancia na unidade pretendida.
+
+:param comprimento: distancia originial
+:param de_unidade: unidade da distancia original
+:param para_unidade: unidade da distancia pretendida
+:return: comprimento na unidade pretendida
+\end{DoxyVerb}
+ 
+
+Definition at line 24 of file distancia.\+py.
+
+\mbox{\Hypertarget{namespacedistancia_ab2dba0580208d0001d0950b494d5c634}\label{namespacedistancia_ab2dba0580208d0001d0950b494d5c634}} 
+\index{distancia@{distancia}!menu\_distancia@{menu\_distancia}}
+\index{menu\_distancia@{menu\_distancia}!distancia@{distancia}}
+\doxysubsubsection{\texorpdfstring{menu\_distancia()}{menu\_distancia()}}
+{\footnotesize\ttfamily def distancia.\+menu\+\_\+distancia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Função para gerir o menu dos conversores de distância.
+Apresenta um menu e de acordo com as opcao escolhida pelo utilizador chamas as funções de conversão
+\end{DoxyVerb}
+ 
+
+Definition at line 37 of file distancia.\+py.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{namespacedistancia_ab2dba0580208d0001d0950b494d5c634_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedistancia_aed0c0b641499e5e22e8116004564e12b}\label{namespacedistancia_aed0c0b641499e5e22e8116004564e12b}} 
+\index{distancia@{distancia}!fator@{fator}}
+\index{fator@{fator}!distancia@{distancia}}
+\doxysubsubsection{\texorpdfstring{fator}{fator}}
+{\footnotesize\ttfamily dictionary distancia.\+fator}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"mm"}: 0.001,}
+\DoxyCodeLine{3     \textcolor{stringliteral}{"cm"}: 0.01,}
+\DoxyCodeLine{4     \textcolor{stringliteral}{"dm"}: 0.1,}
+\DoxyCodeLine{5     \textcolor{stringliteral}{"m"}: 1,}
+\DoxyCodeLine{6     \textcolor{stringliteral}{"dam"}: 10,}
+\DoxyCodeLine{7     \textcolor{stringliteral}{"hm"}: 100,}
+\DoxyCodeLine{8     \textcolor{stringliteral}{"km"}: 1000,}
+\DoxyCodeLine{9     \textcolor{stringliteral}{"mi"}: 1609.344,    \textcolor{comment}{\# milhas}}
+\DoxyCodeLine{10     \textcolor{stringliteral}{"pe"}: 0.3048      \textcolor{comment}{\# pés}}
+\DoxyCodeLine{11     \}}
+
+\end{DoxyCode}
+
+
+Definition at line 9 of file distancia.\+py.
+
