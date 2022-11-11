@@ -27,7 +27,7 @@ def converte_distancia(comprimento, de_unidade, para_unidade):
     Conversor de distancia.
     Recebe o valor da distancia e correspondente unidade e devolve a distancia na unidade pretendida.
 
-    :param comprimento: distancia originial
+    :param comprimento: distancia original
     :type comprimento: int ou float
     :param de_unidade: unidade da distancia original (valores admissíveis: fator.keys())
     :type de_unidade: string
@@ -36,6 +36,11 @@ def converte_distancia(comprimento, de_unidade, para_unidade):
     :return: comprimento na unidade pretendida
     :rtype: float
     :raises TypeError: se os tipos não forem os corretos
+
+    :Exemplo:
+
+    >>> converte_distancia(10, "m", "km")
+    0.01
     """
     assert isinstance(comprimento, (int, float)), "comprimento deve ser int ou float"
     assert isinstance(de_unidade, str), f"unidade deve ser elemento de {list(_fator.keys())}"
@@ -47,18 +52,18 @@ def converte_distancia(comprimento, de_unidade, para_unidade):
 def menu_distancia():
     """
     Função para gerir o menu dos conversores de distância.
-    Apresenta um menu e de acordo com as opcao escolhida pelo utilizador chamas as funções de conversão
+    Apresenta um menu e de acordo com as opção escolhida pelo utilizador chamas as funções de conversão
     """
 
     while True:
         print(f"""
              -----------------------------  converte distâncias ------------------------------
              Unidades possíveis: {list(_fator.keys())}
-             exemplo: 
-               de = 10 m    # colocar espaco a seguir ao número
+             exemplo:
+               de = 10 m    # colocar espaço a seguir ao número
                para = km
 
-               km = 10000 m 
+               km = 10000 m
              (S)air
              """)
 

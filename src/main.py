@@ -7,15 +7,15 @@ from volume import menu_volume
 
 def menu():
     """ função para gerir o menu principal.
-    Apresenta um menu e de acordo com as opcao escolhida pelo utilizador entra num submenu de conversao
+    Apresenta um menu e de acordo com a opção escolhida pelo utilizador entra num submenu de conversão
     ou sai da aplicação
     """
 
     while True:
         print("""
-        ----------------------------------  Menu -----------------------------------  
-        (D)istancia        (V)olume        (M)assa        (A)rea        V(e)locidade        
-        
+        ----------------------------------  Menu -----------------------------------
+        (D)istancia        (V)olume        (M)assa        (A)rea        V(e)locidade
+
                                            (S)air
         ----------------------------------------------------------------------------""")
 
@@ -35,7 +35,7 @@ def menu():
             print("A sair...")
             break
         else:
-            print("opcao invalida")
+            print("opção invalida")
 
 
 if __name__ == "__main__":
