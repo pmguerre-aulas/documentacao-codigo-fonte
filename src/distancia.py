@@ -6,7 +6,7 @@ módulo que implementa os métodos necessários para a conversão de unidades de
 :Authors: pcardoso
 """
 
-fator = {
+_fator = {
     "mm": 0.001,
     "cm": 0.01,
     "dm": 0.1,
@@ -38,10 +38,10 @@ def converte_distancia(comprimento, de_unidade, para_unidade):
     :raises TypeError: se os tipos não forem os corretos
     """
     assert isinstance(comprimento, (int, float)), "comprimento deve ser int ou float"
-    assert isinstance(de_unidade, str), f"unidade deve ser elemento de {list(fator.keys())}"
-    assert isinstance(para_unidade, str), f"unidade deve ser elemento de {list(fator.keys())}"
+    assert isinstance(de_unidade, str), f"unidade deve ser elemento de {list(_fator.keys())}"
+    assert isinstance(para_unidade, str), f"unidade deve ser elemento de {list(_fator.keys())}"
 
-    return comprimento * fator[de_unidade] / fator[para_unidade]
+    return comprimento * _fator[de_unidade] / _fator[para_unidade]
 
 
 def menu_distancia():
@@ -53,7 +53,7 @@ def menu_distancia():
     while True:
         print(f"""
              -----------------------------  converte distâncias ------------------------------
-             Unidades possíveis: {list(fator.keys())}
+             Unidades possíveis: {list(_fator.keys())}
              exemplo: 
                de = 10 m    # colocar espaco a seguir ao número
                para = km
@@ -68,10 +68,10 @@ def menu_distancia():
                 break
             comprimento, de_unidade = de_str.split()
             comprimento = float(comprimento)
-            assert de_unidade in fator.keys(), "Unidade inválida"
+            assert de_unidade in _fator.keys(), "Unidade inválida"
 
             para_unidade = input("para?").lower()
-            assert para_unidade in fator.keys(), "Unidade inválida"
+            assert para_unidade in _fator.keys(), "Unidade inválida"
 
             print(f"{de_str} = {converte_distancia(comprimento, de_unidade, para_unidade)} {para_unidade}")
         except Exception as e:
